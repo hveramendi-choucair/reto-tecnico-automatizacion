@@ -1,6 +1,9 @@
 package co.com.choucair.certification.autom.stepdefinitions;
 
 import co.com.choucair.certification.autom.tasks.AbrirPagina;
+import co.com.choucair.certification.autom.tasks.Carro;
+import co.com.choucair.certification.autom.tasks.Categoria;
+import co.com.choucair.certification.autom.tasks.Productos;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
@@ -23,14 +26,17 @@ public class MyStepdefs {
 
     @When("^he selects one category page$")
     public void heSelectsOneCategoryPage() {
+        OnStage.theActorInTheSpotlight().attemptsTo(Categoria.seleccionarCategoria());
     }
 
     @And("^he adds the products to the cart$")
     public void heAddsTheProductsToTheCart() {
+        OnStage.theActorInTheSpotlight().attemptsTo(Productos.agregar());
     }
 
     @And("^he goes to view his cart$")
     public void heGoesToViewHisCart() {
+        OnStage.theActorInTheSpotlight().attemptsTo(Carro.gotoCart());
     }
 
     @Then("^he should see the added products in the shopping car$")
