@@ -1,5 +1,6 @@
 package co.com.choucair.certification.autom.stepdefinitions;
 
+import co.com.choucair.certification.autom.questions.ShoppingCartAnswer;
 import co.com.choucair.certification.autom.tasks.AbrirPagina;
 import co.com.choucair.certification.autom.tasks.Carro;
 import co.com.choucair.certification.autom.tasks.Categoria;
@@ -9,8 +10,10 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
+import org.hamcrest.Matchers;
 
 public class MyStepdefs {
 
@@ -31,7 +34,9 @@ public class MyStepdefs {
 
     @And("^he adds the products to the cart$")
     public void heAddsTheProductsToTheCart() {
-        OnStage.theActorInTheSpotlight().attemptsTo(Productos.agregar());
+        //for(int i = 0; i < 5; i ++) {
+            OnStage.theActorInTheSpotlight().attemptsTo(Productos.agregar());
+        //}
     }
 
     @And("^he goes to view his cart$")
@@ -41,6 +46,7 @@ public class MyStepdefs {
 
     @Then("^he should see the added products in the shopping car$")
     public void heShouldSeeTheAddedProductsInTheShoppingCar() {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat(ShoppingCartAnswer.addedResult(), Matchers.equalTo("Tu compra es 100% segura")));
     }
 
     @And("^the total price should be correct$")

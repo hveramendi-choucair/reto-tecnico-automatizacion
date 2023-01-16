@@ -16,14 +16,13 @@ public class Productos implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
-        actor.attemptsTo(
-                Click.on(ProductPage.BTN_COMPRA_RAPIDA),
-                Click.on(ProductPage.BTN_AGREGAR_CARRO));
-        for (int i = 0; i < ThreadLocalRandom.current().nextInt(1, 10 + 1); i++) {
             actor.attemptsTo(
-                    Click.on(ProductPage.BTN_AGREGAR_CANTIDAD));
-        }
+                    Click.on(ProductPage.BTN_COMPRA_RAPIDA),
+                    Click.on(ProductPage.BTN_AGREGAR_CARRO));
+            for (int i = 0; i < 3; i++) {
+                actor.attemptsTo(
+                        Click.on(ProductPage.BTN_AGREGAR_CANTIDAD));
+            }
         actor.attemptsTo(Click.on(ProductPage.BTN_CONTINUAR_COMPRA));
     }
 }

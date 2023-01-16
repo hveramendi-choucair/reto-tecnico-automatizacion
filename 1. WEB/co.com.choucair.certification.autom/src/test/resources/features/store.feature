@@ -1,6 +1,6 @@
 #Autor Henry
 
-  @stories
+  @storie
   Feature: Exito Store
     As a customer, I want to add products to the shopping cart
   @scenario1

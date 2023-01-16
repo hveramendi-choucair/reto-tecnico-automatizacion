@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="1" failures="0" name="Create an employee" skipped="0" tests="1" time="0.56" timestamp="2023-01-16 05:09:28"><testcase name="Creation an employee"><error type="java.lang.NullPointerException"/><system-err>null&#13;
+co.com.choucair.certification.api.stepdefinitions.CreateStepdefs.youCreateAnEmployee(CreateStepdefs.java:17)&#13;
+✽.you create an employee(C:/Choucair/Reto Tecnico/reto-tecnico-automatzacion/2. API/co.com.choucair.certification.api/src/test/resources/features/create.feature:6)&#13;
+</system-err></testcase></testsuite>
